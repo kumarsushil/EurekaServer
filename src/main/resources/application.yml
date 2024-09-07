@@ -1,0 +1,18 @@
+server:
+  port: 8761
+  
+eureka:
+  client:
+      registerWithEureka: false  # Registers the service with Eureka server
+      fetchRegistry: false  # Enables discovery of other services from Eureka
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info  # Expose health endpoints for Eureka to check service status
+  health:
+    livenessstate:
+      enabled: true
+    readinessstate:
+      enabled: true
